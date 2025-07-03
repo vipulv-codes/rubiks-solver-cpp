@@ -1,0 +1,20 @@
+# Build files
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.cmake
+
+# Binaries
+*.out
+*.o
+*.exe
+
+# IDE-specific
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
