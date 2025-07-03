@@ -92,11 +92,12 @@ int main() {
 
 
     /*--- IDA* Solver ---*/
-    string fileName = "cornerDepthDB.txt";
+    string fileName = "../cornerDepthDB.txt";
 
     // Code to create Corner Database (comment out if already built)
+    // int depth = 9;
     // CornerDBMaker dbMaker(fileName, 0x99);
-    // dbMaker.bfsAndStore(9);      
+    // dbMaker.bfsAndStore(depth);      
 
     RubiksCubeBitboard cube_ida;
 
