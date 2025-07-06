@@ -21,6 +21,23 @@ char RubiksCube::getColorLetter(COLOR color) {
     }
 }
 
+string RubiksCube::getColoredLetter(COLOR color) {
+    switch (color) {
+        case COLOR::BLUE:
+            return "\033[1;34mB\033[0m";
+        case COLOR::GREEN:
+            return "\033[1;32mG\033[0m";
+        case COLOR::RED:
+            return "\033[1;31mR\033[0m";
+        case COLOR::YELLOW:
+            return "\033[1;33mY\033[0m";
+        case COLOR::WHITE:
+            return "\033[1;37mW\033[0m";
+        case COLOR::ORANGE:
+            return "\033[38;5;208mO\033[0m";
+    }
+}
+
 /*
  * Describe a move using an index
  */
@@ -159,7 +176,7 @@ void RubiksCube::print() const {
     for (int row = 0; row <= 2; row++) {
         for (unsigned i = 0; i < 7; i++) cout << " ";
         for (int col = 0; col <= 2; col++) {
-            cout << getColorLetter(getColor(FACE::UP, row, col)) << " ";
+            cout << getColoredLetter(getColor(FACE::UP, row, col)) << " ";
         }
         cout << "\n";
     }
@@ -169,22 +186,22 @@ void RubiksCube::print() const {
     for (int row = 0; row <= 2; row++) {
 
         for (int col = 0; col <= 2; col++) {
-            cout << getColorLetter(getColor(FACE::LEFT, row, col)) << " ";
+            cout << getColoredLetter(getColor(FACE::LEFT, row, col)) << " ";
         }
         cout << " ";
 
         for (int col = 0; col <= 2; col++) {
-            cout << getColorLetter(getColor(FACE::FRONT, row, col)) << " ";
+            cout << getColoredLetter(getColor(FACE::FRONT, row, col)) << " ";
         }
         cout << " ";
 
         for (int col = 0; col <= 2; col++) {
-            cout << getColorLetter(getColor(FACE::RIGHT, row, col)) << " ";
+            cout << getColoredLetter(getColor(FACE::RIGHT, row, col)) << " ";
         }
         cout << " ";
 
         for (int col = 0; col <= 2; col++) {
-            cout << getColorLetter(getColor(FACE::BACK, row, col)) << " ";
+            cout << getColoredLetter(getColor(FACE::BACK, row, col)) << " ";
         }
         cout << "\n";
     }
@@ -194,7 +211,7 @@ void RubiksCube::print() const {
     for (int row = 0; row <= 2; row++) {
         for (unsigned i = 0; i < 7; i++) cout << " ";
         for (int col = 0; col <= 2; col++) {
-            cout << getColorLetter(getColor(FACE::DOWN, row, col)) << " ";
+            cout << getColoredLetter(getColor(FACE::DOWN, row, col)) << " ";
         }
         cout << "\n";
     }

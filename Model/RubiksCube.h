@@ -58,6 +58,11 @@ public:
     static char getColorLetter(COLOR color);
 
     /*
+     * Returns the corresponding 'colored' first letter of the given COLOR
+     * Eg: For COLOR::GREEN, it returns green colored 'G'
+     */
+    static string getColoredLetter(COLOR color);
+    /*
      * Returns true if the Rubik Cube is solved, otherwise returns false.
      */
     virtual bool isSolved() const = 0;
